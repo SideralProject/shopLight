@@ -1,0 +1,45 @@
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+	    <ul class="list-group">
+			    <a class="list-group-item active" >Категории
+			    <button type="button" ng-click="addCategory()" class="btn btn-xs btn-default glyphicon glyphicon-plus pull-right" title="Добави категория"></button>
+		    </a>
+            <a ng-repeat="category in categories" class="list-group-item" ui-sref-active="active" ng-click="setCurrentCategory(category.id)" ui-sref="articles.category({categoryName:category.name})" >
+	            <div class="row vertical-align">
+					<div class="col-xs-9">{{category.name}}</div>
+					<div class="col-xs-3 nopadding  text-right">
+						<button type="button" ng-click="editCategory(category.id,category.name)" class="btn btn-xs btn-default glyphicon glyphicon-edit" title="Редактирай категория"></button>
+						<button type="button" ng-click="deleteCategory(category.id,category.name)" class="btn btn-xs btn-default glyphicon glyphicon-trash" title="Изтрий категория"></button>
+					</div>
+	            </div>
+	        </a>
+		</ul>	
+    </div>    
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+	    <div id="menu-toggle" class="leftMenuOpen btn btn-default btn-sm" >
+		    <span class="glyphicon glyphicon-menu-left"></span>
+	    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div ui-view="categoryArticlesView"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    $(this).find("span").toggleClass("glyphicon-menu-right").toggleClass("glyphicon-menu-left");
+});
+</script>

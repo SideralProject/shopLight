@@ -1,0 +1,25 @@
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <button type="button" class="close" ng-click="close('hiks')" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="panel-title">{{settings.title}}</h4>
+      </div>
+      <form novalidate class="css-form" name="frmConfirm">
+      <div class="panel-body" ng-class="{ 'has-error' : frmConfirm.settings.keys.name.$invalid && !frmConfirm.settings.keys.name.$pristine}">
+	       <div class="row vertical-align">
+				<div class="col-xs-1"><span class="glyphicon glyphicon-alert confirm-icon"></span></div>
+				<div class="col-xs-11 text-center">
+					{{settings.text}}
+					<input type="text" name="inputField" ng-model="settings.keys.name" ng-show="settings.inputFieldShow" required="" class="form-control">
+				</div>
+            </div>
+      </div>
+      <div class="panel-footer text-right">
+        <button type="button" ng-click="close()" class="btn btn-default" data-dismiss="modal">Отмени</button>
+        <input type="submit" ng-disabled="frmConfirm.inputField.$error.required" ng-click="confirm(settings.keys)" class="btn btn-primary" data-dismiss="modal" value="Потвърди" />
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

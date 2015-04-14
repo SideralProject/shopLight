@@ -1,0 +1,20 @@
+<div class="row" data-equal-heights>
+  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2" ng-repeat="art in aArticles">
+    <div class="thumbnail" style="overflow:hidden;cursor:default;">
+      <img ng-src="art/thumb/{{art.id_category}}_{{art.id}}_1.jpg" style="min-height:156px;  border-radius: 5px;">
+      <div class="caption" style="width: 90%;margin: auto;">
+        <h3 id="thumbnail-label" style="height:50px;margin:0;text-align:center;">{{art.name}}</h3>
+        <div style="height:100px;overflow:hidden;text-align:justify;">{{art.description}}<div class="read-more"></div></div>
+        <div style="height:20px;">
+	        <div ng-show="!art.weight" class="text-center"><strong style="font-size:14px;">{{art.price | number : 2}} лв.</strong></div>
+	        <div ng-show="art.weight" class="text-center"><strong style="font-size:14px;">{{(art.weight * ($stateParams.categoryName == "Злато" ? metalPrices.gold : metalPrices.silver)) | number : 2}} лв.</strong></div>
+		    <div ng-show="art.weight" style="font-size:11px;">{{$stateParams.categoryName == "Злато" ? metalPrices.gold : metalPrices.silver}} лв./гр. - {{art.weight}} гр. </div>
+		</div>
+        <div style="height:25px;" class="text-right">	        
+	        <button type="button" ng-click="editArticle(art)" class="btn btn-xs btn-default glyphicon glyphicon-edit"></button>
+	        <button type="button" ng-click="deleteArticle(art.id,art.name)" class="btn btn-xs btn-default glyphicon glyphicon-trash"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

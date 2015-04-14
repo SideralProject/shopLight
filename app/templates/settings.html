@@ -1,0 +1,69 @@
+<div style="margin:20px;">
+	<div class="row-fluid">
+		<div class="col-xs-12">
+			<div class="thumbnail" style="overflow:hidden;cursor:default;text-align:center;" >
+				<h3 class="text-center">Рекламен банер</h3>
+				<div class="row">
+				  <div class="col-xs-12">
+				    <div class="input-group" style="padding:20px 20px 10px 20px;">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..." ng-model="adverts[0].active" ng-true-value="'1'" ng-false-value="'0'">
+				      </span>
+				      <input type="text" class="form-control" aria-label="..." ng-model="adverts[0].txt">
+				    </div><!-- /input-group -->
+				  </div>
+				  <br />
+				  <div class="col-xs-12">
+				    <div class="input-group" style="padding:20px 20px 10px 20px;">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..." ng-model="adverts[1].active" ng-true-value="'1'" ng-false-value="'0'">
+				      </span>
+				      <input type="text" class="form-control" aria-label="..." ng-model="adverts[1].txt">
+				    </div><!-- /input-group -->
+				  </div>
+				  <br />
+				  <div class="col-xs-12">
+				    <div class="input-group" style="padding:20px 20px 20px 20px;">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="..." ng-model="adverts[2].active" ng-true-value="'1'" ng-false-value="'0'">
+				      </span>
+				      <input type="text" class="form-control" aria-label="..." ng-model="adverts[2].txt">
+				    </div><!-- /input-group -->
+				  </div>
+				  <div class="col-xs-12">
+				    <h3 class="text-center">Преглед</h3>
+				    <div id="divReklama" style="height:100px;width:100%;">
+					    
+				    </div>
+				  </div>
+				  <div class="col-xs-12">
+					  <button type="button" ng-click="previewAdvert()" class="btn btn-md btn-primary glyphicon glyphicon-eye-open"> Преглед</button>
+					  <button type="button" ng-click="setAdvert()" class="btn btn-md btn-primary glyphicon glyphicon-save"> Запиши</button>
+					  <div style="height:20px;"></div>
+				  </div>
+				</div>
+			</div>
+			<div class="thumbnail" style="overflow:hidden;cursor:default;">
+				<h3 class="text-center">Цени благородни метали на грам</h3>
+				<div class="row">
+				  <div class="col-xs-12 col-lg-offset-5">
+				    <div class="input-group" style="padding:20px 10px 10px 10px; width:240px;">
+				      <span class="input-group-addon" style="width:76px" id="basic-addon1">Злато</span>
+				      <input type="text" class="form-control" ng-model="metalPrices.gold">
+				      <span class="input-group-btn">
+				        <button class="btn btn-primary" type="button" ng-click="setMetalPrices('gold')">&crarr;</button>
+				      </span>
+				    </div><!-- /input-group -->
+				    <div class="input-group" style="padding:20px 10px 20px 10px; width:240px;">
+					  <span class="input-group-addon" style="width:76px" id="basic-addon1">Сребро</span>
+				      <input type="text" class="form-control" ng-model="metalPrices.silver">
+				      <span class="input-group-btn">
+				        <button class="btn btn-primary" type="button" ng-click="setMetalPrices('silver')">&crarr;</button>
+				      </span>
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div><!-- /.row -->
+			</div>
+		</div>
+	</div>
+</div>
